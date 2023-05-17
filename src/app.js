@@ -23,11 +23,8 @@ function  formatDate(timestamp){
 }
 
 
-
-
-
 function displayTempature(response) {
-
+  
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
 
@@ -46,9 +43,13 @@ function displayTempature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 const apiKey = `d0bec9d6480b2df7e1b8e4642f141337`;
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+let city = "New York";
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTempature);
