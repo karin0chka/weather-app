@@ -18,6 +18,21 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input type="search" 
+                placeholder="Type a city..."
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+                / >
+              </div>
+              <div class="col-3">
+                <input type="submit" value="Search" class="btn btn-primary w-100" />
+              </div>
+            </div>
+          </form>
           <h1 id="city"></h1>
           <ul>
             <li>Last updated: <span id="date"></span></li>
@@ -27,7 +42,7 @@
             <div class="col-6">
               <div class="d-flex weather-temperature">
                 <img
-                  src="#"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Spinner_font_awesome.svg/1200px-Spinner_font_awesome.svg.png"
                   alt="Clear"
                   id="icon"
                 />
